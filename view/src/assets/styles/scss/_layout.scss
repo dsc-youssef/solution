@@ -2,4 +2,12 @@
   background: $layout-bg;
   width: $layout-width;
   min-height: $layout-min-height;
+  display: $layout-display;
+
+  &.direction-ltr {
+    font-family: $font-roboto;
+    direction: ltr;
+  }
+
+
 }

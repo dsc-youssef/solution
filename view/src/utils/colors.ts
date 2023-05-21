@@ -1,9 +1,11 @@
+const defaultOpactiy: number = 1;
+
 export const COLORS = {
-  primary: (opacity: number) => `rgba(0, 0, 0, ${opacity})`,
-  secondary: (opacity: number) => `rgba(0, 0, 0, ${opacity})`,
-  info: (opacity: number) => `rgba(0, 0, 0, ${opacity})`,
-  warning: (opacity: number) => `rgba(0, 0, 0, ${opacity})`,
-  danger: (opacity: number) => `rgba(0, 0, 0, ${opacity})`,
-  dark: (opacity: number) => `rgba(0, 0, 0, ${opacity})`,
-  success: (opacity: number) => `rgba(0, 0, 0, ${opacity})`
+  primary: (opacity: number = defaultOpactiy) => `rgba(203, 12, 159, ${opacity})`,
+  secondary: (opacity: number = defaultOpactiy) => `rgba(131, 146, 171, ${opacity})`,
+  info: (opacity: number = defaultOpactiy) => `rgba(23, 193, 232, ${opacity})`,
+  warning: (opacity: number = defaultOpactiy) => `rgba(251, 207, 51, ${opacity})`,
+  danger: (opacity: number = defaultOpactiy) => `rgba(255, 99, 132, ${opacity})`,
+  dark: (opacity: number = defaultOpactiy) => `rgba(33, 37, 41, ${opacity})`,
+  success: (opacity: number = defaultOpactiy) => `rgba(130, 214, 22, ${opacity})`
 } as const;

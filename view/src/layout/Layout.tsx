@@ -1,6 +1,9 @@
 // Dependencies
 import { FC, lazy } from "react";
 
+// Redux
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 // React Router
 import { Outlet } from "react-router-dom";
@@ -9,15 +12,16 @@ import { Outlet } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 
 // Components
-const Footer = lazy(() => import("@/components/footer"));
-const Navbar = lazy(() => import("@/components/navbar"));
-const Sidebar = lazy(() => import("@/components/sidebar"));
+const Footer = lazy(() => import("@/components/Footer"));
+const Navbar = lazy(() => import("@/components/Navbar"));
+const Sidebar = lazy(() => import("@/components/Sidebar"));
 
 
 const LayoutStructure: FC = () => {
+  const direction = useSelector((state: RootState) => state.settings.direction);
 
   return (
-    <main className="w-100 min-vh-100 d-flex bg-gray-100">
+    <main className={`main-layout direction-${direction}`}>
       <Sidebar />
       <Row>
         <Col xs="12">

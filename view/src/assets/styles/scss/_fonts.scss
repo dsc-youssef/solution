@@ -1,0 +1,38 @@
+/* Start Create Robot Font */
+
+@font-face {
+  font-family: "roboto";
+  src: url("@/assets/fonts/roboto/Roboto-Light.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("@/assets/fonts/roboto/Roboto-Regular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("@/assets/fonts/roboto/Roboto-Medium.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("@/assets/fonts/roboto/Roboto-Bold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("@/assets/fonts/roboto/Roboto-Black.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 900;
+}
+
+/* End Create Robot Font */
