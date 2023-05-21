@@ -7,14 +7,16 @@
 @import "./scss/mixins";
 @import "~bootstrap/mixins";
 @import "~bootstrap/utilities";
+@import "./scss/custom";
+
 
 // Layout & components
 // IN BUILD MODE UNCOMMENT THIS CODE AND COMMENT BOOTSTRAP IMPORT IN ( App.tsx )
 @import "./scss/layout";
-@import "./scss/sidebar";
 @import "./scss/card";
 @import "~bootstrap/card";
-/* 
+
+/*
 @import "~bootstrap/root";
 @import "~bootstrap/reboot";
 @import "~bootstrap/type";

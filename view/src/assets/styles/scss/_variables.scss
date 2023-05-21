@@ -21,9 +21,7 @@ $secondary: #8392AB !default;
 $info: #17c1e8 !default;
 $success: #82d616 !default;
 $warning: #fbcf33 !default;
-$danger: #ea0606 !default;
-$yellow-fire: #ff6900 !default;
-$blue-fire: #6200EE !default;
+$danger: #FF6384 !default;
 $light: $gray-200 !default;
 $dark: $gray-900 !default;
 $transparent: transparent !default;
@@ -38,27 +36,27 @@ $theme-colors: (
   "warning": $warning,
   "danger": $danger,
   "light": $light,
-  "dark": $dark
-) !default;
+  "dark": $dark) !default;
 // scss-docs-end theme-colors-map
 
 // scss-docs-start box-shadow-variables
 $box-shadow-xs: 0 2px 9px -5px rgba($black, 0.15) !default;
-$box-shadow-sm: 0 .25rem .375rem -.0625rem rgba(20, 20, 20, .12), 0 .125rem .25rem -.0625rem rgba(20, 20, 20, .07) !default;
+$box-shadow-sm: 0 .25rem .375rem -.0625rem rgba(20, 20, 20, .12),
+  0 .125rem .25rem -.0625rem rgba(20, 20, 20, .07) !default;
 $box-shadow: 0 .3125rem .625rem 0 rgba(0, 0, 0, 0.12) !default;
-$box-shadow-lg: 0 8px 26px -4px rgba($gray-600, 0.15), 0 8px 9px -5px rgba(20, 20, 20, 0.06) !default;
+$box-shadow-lg: 0 8px 26px -4px rgba($gray-600, 0.15),
+  0 8px 9px -5px rgba(20, 20, 20, 0.06) !default;
 $box-shadow-xl: 0 23px 45px -11px rgba(20, 20, 20, .25) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, .075) !default;
 
-$box-shadow-map:(
+$box-shadow-map: (
   "none": none,
   "xs": $box-shadow-xs,
   "sm": $box-shadow-sm,
   "md": $box-shadow,
   "lg": $box-shadow-lg,
   "xl": $box-shadow-xl,
-  "inset": $box-shadow-inset
-) !default;
+  "inset": $box-shadow-inset) !default;
 
 // scss-docs-end box-shadow-variables
 
@@ -79,11 +77,11 @@ $layout-min-height: 100vh !default;
 $layout-width: 100% !default;
 
 // Sidebar
-$sidebar-width: 325px !default;
-$sidebar-border-radius: 0px !default;
-$sidebar-box-shadow: none !default;
+$sidebar-width: 275px !default;
+$sidebar-border-radius: 0 !important !default;
+$sidebar-box-shadow: 0 0 0 0 transparent !important !default;
 
 // Cards
 $card-border-color: transparent !default;
-$card-box-shadow: $box-shadow-xs  !default;
+$card-box-shadow: $box-shadow-xs !default;
 $card-border-radius: $border-radius-xl !default;
