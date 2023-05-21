@@ -2,15 +2,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
     "zip": "bash ./bin/zip.sh",
     "unzip": "bash ./bin/unzip.sh",
     "cache": "php artisan view:cache && php artisan config:cache && php artisan route:cache"
-  },
-  "devDependencies": {
-    "axios": "^1.1.2",
-    "laravel-vite-plugin": "^0.7.5",
-    "vite": "^4.0.0"
   }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RolesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get("/", function () {
-  return "Hello Guys";
-});
+Route::get("/", [RolesController::class, "index"]);
