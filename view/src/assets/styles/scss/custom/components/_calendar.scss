@@ -1,0 +1,103 @@
+.react-calendar {
+  width: 100%;
+  line-height: 1.125em;
+  margin: 0;
+  @extend .card;
+
+  button {
+    margin: 0;
+    border: 0;
+    outline: none;
+
+    &:enabled:hover {
+      cursor: pointer;
+    }
+  }
+
+  .react-calendar__navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 1em;
+
+    button {
+      min-width: 44px;
+      background: none;
+      &:enabled:hover, &:enabled:focus {
+        background-color: #e6e6e6;
+      }
+      &:disabled {
+        background-color: #f0f0f0;
+      }
+    }
+
+  }
+
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75em;
+
+    .react-calendar__month-view__weekdays__weekday {
+      padding: .5em;
+    }
+
+  }
+
+
+  .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  
+  .react-calendar__month-view__days__day--neighboringMonth {
+    opacity: .5;
+  }
+
+  .react-calendar__year-view .react-calendar__tile,
+  .react-calendar__decade-view .react-calendar__tile,
+  .react-calendar__century-view .react-calendar__tile {
+    padding: 2em 0.5em;
+  }
+
+  .react-calendar__tile {
+    max-width: 100%;
+    padding: 10px 6.6667px;
+    background: transparent;
+    border-radius: $border-radius-lg;
+    text-align: center;
+    line-height: 16px;
+    transition: all .2s ease-out;
+    
+    &:enabled:hover, &:enabled:focus {
+      background-color: #e6e6e6;
+    }
+    &.react-calendar__tile--now {
+      background: $primary;
+      &:enabled:hover, &:enabled:focus {
+        background: #ffffa9;
+      }
+    }
+
+    &.react-calendar__tile--hasActive {
+      background: $warning;
+      color: white;
+      &:enabled:hover, &:enabled:focus {
+        background: #a9d4ff;
+      }
+    }
+
+    &.react-calendar__tile--active {
+      background: $warning;
+      color: white;
+      &:enabled:hover, &:enabled:focus {
+        background: $warning;
+      }
+    }
+
+  }
+
+}

@@ -1,7 +1,7 @@
 // Dependencies
 import axios  from "axios";
-import { INFORMATION } from "@/utils/config";
+import { CONFIG } from "@/utils/config";
 
 export const request = axios.create({
-  baseURL: `${INFORMATION.request_url}`
+  baseURL: `${CONFIG.request_url}`
 });

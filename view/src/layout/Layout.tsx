@@ -12,16 +12,16 @@ import { Outlet } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 
 // Components
-const Footer = lazy(() => import("@/components/Footer"));
-const Navbar = lazy(() => import("@/components/Navbar"));
-const Sidebar = lazy(() => import("@/components/Sidebar"));
+const Footer = lazy(() => import("@/components/footer"));
+const Navbar = lazy(() => import("@/components/navbar"));
+const Sidebar = lazy(() => import("@/components/sidebar"));
 
 
 const LayoutStructure: FC = () => {
-  const direction = useSelector((state: RootState) => state.settings.direction);
+  const { direction, language } = useSelector((state: RootState) => state.settings);
 
   return (
-    <main className={`main-layout direction-${direction}`}>
+    <main className={`main-layout direction-${direction} lang-${language}`}>
       <Sidebar />
       <Row>
         <Col xs="12">

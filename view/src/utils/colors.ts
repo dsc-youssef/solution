@@ -1,6 +1,6 @@
 const defaultOpactiy: number = 1;
 
-export const COLORS = {
+export const colors = {
   primary: (opacity: number = defaultOpactiy) => `rgba(203, 12, 159, ${opacity})`,
   secondary: (opacity: number = defaultOpactiy) => `rgba(131, 146, 171, ${opacity})`,
   info: (opacity: number = defaultOpactiy) => `rgba(23, 193, 232, ${opacity})`,

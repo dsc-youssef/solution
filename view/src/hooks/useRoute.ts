@@ -3,51 +3,46 @@ import { RouteObject, RoutesArray } from "@/types/route";
 import { User } from "@/types/user";
 
 // Config
-import { INFORMATION } from "@/utils/config";
-
-/** useRoute
-  * - Create a Route Object
-  * - Create Routes Array
-  * - Route Validate
-  * - Change Title
-*/
+import { CONFIG } from "@/utils/config";
 
 const useRoute = () => {
   /** createRouteObject
     * This Function Used To Create a Route Object.
-    * @param RouteObject route
-    * @return object
+    * @param { RouteObject route }
+    * @return { RouteObject }
   */
   const createRouteObject = (route: RouteObject): RouteObject => route;
 
   /** createRoutesArray
     * This Function Used To Create Array Of Routes Object.
-    * @param RoutesArray routes
-    * @return array
+    * @param { RoutesArray routes }
+    * @return { RoutesArray }
   */
   const createRoutesArray = (routes: RoutesArray): RoutesArray => routes;
 
   /** routeValidate
     * This Function Used To Check If Current User Have Access To This Route.
-    * @param RouteObject route,
-    * @param User user
-    * @param number publicRole
-    * @return boolean
+    * @param { RouteObject route }
+    * @param { User user }
+    * @param { number publicRole }
+    * @return { boolean | number[] | undefined }
   */
-  const routeValidate = (route: RouteObject, user: User, publicRole: number) => route?.accessRoles?.filter((role: number) => user?.roles?.includes(role) || role === publicRole);
+  const routeValidate = (route: RouteObject, user: User, publicRole: number): boolean | number[] | undefined => route?.accessRoles?.filter((role: number) => user?.roles?.includes(role) || role === publicRole);
 
-  /** changeTitle
+  /** setTitle
    * This Function Used To Change Page Title.
-   * @param string title
-   * @return void
+   * @param { string title }
+   * @return { void }
    */
-  const changeTitle = (title: string) => document.title = `${title} | ${INFORMATION.shortcut_name}`;
+  const setTitle = (title: string): void => {
+    document.title = `${title} | ${CONFIG.shortcut_name}`
+  };
 
   return {
     createRouteObject,
     createRoutesArray,
     routeValidate,
-    changeTitle
+    setTitle
   }
 }
 
