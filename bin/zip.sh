@@ -39,6 +39,6 @@ printf "Version: ";
 read version;
 
 # Zip This File
-zip -r solution-${version}.zip $outputDir
+zip -rf solution-${version}.zip $outputDir
 
-rm -r $outputDir
+rm -rf $outputDir
