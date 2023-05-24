@@ -8,9 +8,17 @@
     font-family: $font-roboto;
     direction: ltr;
   }
-  
+
+
   .main-content {
-    margin: 1rem 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    >[class*="col-"] {
+      width: 100%;
+      padding: 0;
+    }
   }
 
 

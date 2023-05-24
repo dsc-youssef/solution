@@ -22,8 +22,10 @@ $success: #82d616 !default;
 $warning: #fbcf33 !default;
 $danger: #FF6384 !default;
 $light: $gray-200 !default;
-$dark: $gray-900 !default;
+$dark: $gray-800 !default;
+$dark-state: $gray-900 !default;
 $transparent: transparent !default;
+
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -35,7 +37,8 @@ $theme-colors: (
   "warning": $warning,
   "danger": $danger,
   "light": $light,
-  "dark": $dark) !default;
+  "dark": $dark,
+  "dark-state": $dark-state ) !default;
 // scss-docs-end theme-colors-map
 
 // scss-docs-start fonts
@@ -75,7 +78,7 @@ $border-radius-pill: 50rem !default;
 // scss-docs-end border-radius-variables
 
 // Layout
-$layout-bg: $gray-200 !default;
+$layout-bg: $white !default;
 $layout-min-height: 100vh !default;
 $layout-width: 100% !default;
 $layout-display: flex !default;

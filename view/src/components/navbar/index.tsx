@@ -1,12 +1,20 @@
 // Dependencies
 import { FC } from "react";
 
-const Navbar:FC = ()=>{
+// React Components
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+
+
+const MainNavbar: FC = () => {
   return (
-    <header className="navbar w-100 card">
-      Hello
-    </header>
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <i className="fal fa-bars d-none d-lg-inline-block " />
+
+      </Container>
+    </Navbar>
   )
 }
 
-export default Navbar;
+export default MainNavbar;

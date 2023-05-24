@@ -2,7 +2,8 @@
   @extend .card;
   width: $sidebar-min-width;
   min-width: $sidebar-min-width;
-  max-width: $sidebar-max-width;
   border-radius: $sidebar-border-radius;
   box-shadow: $sidebar-box-shadow;
+  background: $sidebar-background !important;
+
 }
