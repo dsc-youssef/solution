@@ -5,13 +5,16 @@ import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 
 // Types
-import type { ChartData, ChartOptions, ChartDataset } from 'chart.js';
+import { ChartData, ChartOptions, ChartDataset } from 'chart.js';
+
+// Data
+import chartOptions from "@/utils/charts/options";
 
 const useChart = () => {
+  const defaultOptions:ChartOptions = chartOptions;
 
   // This Function Used To avoid CategoryScale Error ( IMPORTANT )
   Chart.register(CategoryScale);
-
 
   /** createDataObject
    * This Function Used To Create Chart Data Object
@@ -25,7 +28,7 @@ const useChart = () => {
    * @param { ChartOptions options }
    * @return { ChartOptions }
    */
-  const createOptionsObject = (options: ChartOptions): ChartOptions => options;
+  const createOptionsObject = (options: ChartOptions = chartOptions): ChartOptions => options;
 
   /** createDatasetObject
    * This Function Used To Create a Dataset Object
@@ -34,10 +37,19 @@ const useChart = () => {
    */
   const createDatasetObject = (dataset: ChartDataset): ChartDataset => dataset;
 
+  /** createDatasetsArray
+   * This Function Used To Create Array Of Dataset Object.
+   * @param { ChartDataset[] datasets } 
+   * @return { ChartDataset[] } 
+  */
+  const createDatasetsArray = (datasets:ChartDataset[]):ChartDataset[] => datasets;
+  
   return {
+    defaultOptions,
     createDataObject,
     createOptionsObject,
-    createDatasetObject
+    createDatasetObject,
+    createDatasetsArray
   }
 }
 

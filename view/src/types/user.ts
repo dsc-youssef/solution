@@ -7,8 +7,9 @@ export interface User {
   country?:string,
   sale_code?:string,
   rank?:string,
-  roles?: number[],
-  token?:string,
+  roles: number[],
+  new_token?:string,
+  old_token?:string,
   created_at?: string,
   updated_at?:string
 }

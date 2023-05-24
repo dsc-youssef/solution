@@ -1,26 +1,31 @@
-// export const options = {
-//   responsive: true,
-//   indexAxis: 'x',
-//   scales: {
-//     y: {
-//       grid: {
-//         display: false,
-//         drawOnChartArea: false,
-//         drawTicks: false
-//       }
-//     },
-//     x: {
-//       grid: {
-//         display: false,
-//         drawOnChartArea: false,
-//         drawTicks: false
-//       }
-//     }
-//   },
-//   plugins: {
-//     subtitle: {
-//       display: true,
-//       text: 'Custom Chart Subtitle'
-//     }
-//   }
-// }
+// Types
+import type { ChartOptions } from 'chart.js';
+
+const chartOptions:ChartOptions = {
+  responsive: true,
+  indexAxis: 'x',
+  scales: {
+    y: {
+      grid: {
+        display: true,
+        drawOnChartArea: true,
+        drawTicks: true
+      }
+    },
+    x: {
+      grid: {
+        display: true,
+        drawOnChartArea: true,
+        drawTicks: true
+      }
+    }
+  },
+  plugins: {
+    subtitle: {
+      display: false,
+      text: 'Custom Chart Subtitle'
+    }
+  }
+}
+
+export default chartOptions;
