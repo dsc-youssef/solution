@@ -31,6 +31,9 @@ for FILE in *; do
   fi
 done
 
+# Copy All Hidden Files To output directory
+cp -r .* $outputDir
+
 # Now Select output Version
 printf "Version: ";
 read version;
