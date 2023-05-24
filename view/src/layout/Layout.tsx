@@ -9,7 +9,7 @@ import { RootState } from "@/redux/store";
 import { Outlet } from "react-router-dom";
 
 // React Bootstrap
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 
 // Components
 const Footer = lazy(() => import("@/components/footer"));
@@ -23,15 +23,17 @@ const LayoutStructure: FC = () => {
   return (
     <main className={`main-layout direction-${direction} lang-${language}`}>
       <Sidebar />
-      <Row>
-        <Col xs="12">
-          <Navbar />
-        </Col>
-        <Col xs="12" className="main-content">
-          <Outlet />
-          <Footer />
-        </Col>
-      </Row>
+        <Container fluid>
+          <Row className="main-content">
+            <Col xs="12">
+              <Navbar />
+            </Col>
+            <Col xs="12">
+              <Outlet />
+              <Footer />
+            </Col>
+         </Row>
+        </Container>
     </main>
   )
 }

@@ -3,8 +3,8 @@ import { FC } from "react";
 
 const Navbar:FC = ()=>{
   return (
-    <header className="w-100">
-      
+    <header className="navbar w-100 card">
+      Hello
     </header>
   )
 }
