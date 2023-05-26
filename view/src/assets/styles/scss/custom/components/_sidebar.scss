@@ -1,33 +1,102 @@
-/* variables from custom/variables */
 .sidebar {
   @extend .card;
   min-width: $sidebar-min-width !important;
   border-radius: $sidebar-border-radius;
   box-shadow: $sidebar-box-shadow;
   background: $sidebar-background !important;
+  overflow-x: hidden;
 
-
-  /* Start Sidebar Header*/
   .sidebar-header {
-    // Code
+    @include d-flex(space-between, center);
+    width: 100%;
+    padding: 1rem .5rem;
+    
+    .sidebar-brand {
+      @include d-flex("", center);
+      gap: .6rem;
+      .sidebar-logo {
+        width: 40px;
+        object-fit: cover;
+      }
+      .sidebar-brand-name {
+        color: white;
+        margin: 0;
+      }
+    }
   }
 
-  /* End Sidebar Header*/
-
-
-  /* Start Sidebar Body*/
   .sidebar-body {
+    width: 100%;
+    @include d-flex("", "", column);
+    padding: 1rem 0; 
+    
+    > .sidebar-category-title {
+      width: fit-content;
+      margin: 1.5rem .4rem .5rem .4rem;
+      padding: .4rem .6rem;
+      border-radius: .4rem;
+      text-transform: uppercase;
+      color: $white;
+      font-size: .65rem;
+    }
+    
+    > .sidebar-button {
+      width: 100%;
+      background: rgba($white, .1);
+      border: none;
+      outline: none;
+      border-radius: .2rem;
+      overflow: hidden;
+      @include d-flex("", center);
+      color: rgba($white, .7);
+      padding: .5rem 0;
+      margin: .1rem 0;
+      position: relative;
+      transition: all .13s ease-out;
+      font-weight: bold;
 
-    /* Start Sidebar Button */
+      &::after {
+        content: "";
+        width: .2rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $white;
+      }
 
-    .sidebar-button {
-      // Code
+      &.active {
+        background: rgba($success, .1);
+        color: $success;
+        &:hover {
+          box-shadow: 0 0 1.2rem rgba($success, .4);
+        }
+        &::after {
+          content: "";
+          width: .2rem;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: $success;
+        }
+      }
+
+      &:hover {
+        translate: 1rem;
+      } 
+      
+      > .btn-icon {
+        width: 50px;
+        font-size: 1.2rem;
+      } 
+      
+      > .btn-title {
+        margin: 0;
+        padding: 0;
+      }
+
     }
 
-    /* Start Sidebar Button*/
-
   }
-
-  /* End Sidebar Body*/
-
 }
