@@ -10,14 +10,16 @@
     @include d-flex(space-between, center);
     width: 100%;
     padding: 1rem .5rem;
-    
+
     .sidebar-brand {
       @include d-flex("", center);
       gap: .6rem;
+
       .sidebar-logo {
         width: 40px;
         object-fit: cover;
       }
+
       .sidebar-brand-name {
         color: white;
         margin: 0;
@@ -28,9 +30,9 @@
   .sidebar-body {
     width: 100%;
     @include d-flex("", "", column);
-    padding: 1rem 0; 
-    
-    > .sidebar-category-title {
+    padding: 1rem 0;
+
+    >.sidebar-category-title {
       width: fit-content;
       margin: 1.5rem .4rem .5rem .4rem;
       padding: .4rem .6rem;
@@ -39,8 +41,8 @@
       color: $white;
       font-size: .65rem;
     }
-    
-    > .sidebar-button {
+
+    >.sidebar-button {
       width: 100%;
       background: rgba($white, .1);
       border: none;
@@ -68,9 +70,11 @@
       &.active {
         background: rgba($success, .1);
         color: $success;
+
         &:hover {
           box-shadow: 0 0 1.2rem rgba($success, .4);
         }
+
         &::after {
           content: "";
           width: .2rem;
@@ -84,14 +88,14 @@
 
       &:hover {
         translate: 1rem;
-      } 
-      
-      > .btn-icon {
+      }
+
+      >.btn-icon {
         width: 50px;
         font-size: 1.2rem;
-      } 
-      
-      > .btn-title {
+      }
+
+      >.btn-title {
         margin: 0;
         padding: 0;
       }
