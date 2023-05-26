@@ -1,25 +1,19 @@
 .main-layout {
-  background: $layout-bg;
-  width: $layout-width;
-  min-height: $layout-min-height;
-  display: $layout-display;
+  @apply bg-white min-h-[100vh] w-full flex;
+
 
   &.direction-ltr {
-    font-family: $font-roboto;
+    font-family: 'Poppins', sans-serif;
     direction: ltr;
   }
 
 
   .main-content {
-    width: auto;
-    margin: 0;
-    padding: 0; 
-    > [class*="col-"] {
-      padding: 0;
-      margin: 0;
+    @apply w-auto m-0 p-0;
+
+    >[class*="col-"] {
+      @apply p-0 m-0;
     }
   }
-
-
 
 }

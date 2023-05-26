@@ -11,7 +11,7 @@ import { ChartData, ChartOptions, ChartDataset } from 'chart.js';
 import chartOptions from "@/utils/charts/options";
 
 const useChart = () => {
-  const defaultOptions:ChartOptions = chartOptions;
+  const defaultOptions: ChartOptions = chartOptions;
 
   // This Function Used To avoid CategoryScale Error ( IMPORTANT )
   Chart.register(CategoryScale);
@@ -39,11 +39,11 @@ const useChart = () => {
 
   /** createDatasetsArray
    * This Function Used To Create Array Of Dataset Object.
-   * @param { ChartDataset[] datasets } 
-   * @return { ChartDataset[] } 
+   * @param { ChartDataset[] datasets }
+   * @return { ChartDataset[] }
   */
-  const createDatasetsArray = (datasets:ChartDataset[]):ChartDataset[] => datasets;
-  
+  const createDatasetsArray = (datasets: ChartDataset[]): ChartDataset[] => datasets;
+
   return {
     defaultOptions,
     createDataObject,

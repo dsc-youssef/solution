@@ -41,11 +41,6 @@ $theme-colors: (
   "dark-state": $dark-state ) !default;
 // scss-docs-end theme-colors-map
 
-// scss-docs-start fonts
-$font-roboto: "roboto",
-  sans-serif;
-
-// scss-docs-end fonts
 
 // scss-docs-start box-shadow-variables
 $box-shadow-xs: 0 2px 9px -5px rgba($black, 0.15) !default;
@@ -77,11 +72,6 @@ $border-radius-2xl: 2rem !default;
 $border-radius-pill: 50rem !default;
 // scss-docs-end border-radius-variables
 
-// Layout
-$layout-bg: $white !default;
-$layout-min-height: 100vh !default;
-$layout-width: 100% !default;
-$layout-display: flex !default;
 
 // Cards
 $card-border-color: transparent !default;

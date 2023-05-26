@@ -3,18 +3,27 @@ import { FC } from "react";
 
 // Components
 import SidebarButton from "./Button";
-import CategoryTitle from "./CategoryTitle";
+import SidebarButtonsContainer from "./ButtonsContainer";
+
 
 const Body: FC = () => {
   return (
     <div className="sidebar-body">
-      <CategoryTitle bg="success" title="public" />
-      <SidebarButton icon="rocket" active={true}  title="Dashboard" />
-      <SidebarButton icon="users" title="Customers" />
-      <CategoryTitle bg="primary" title="Money" />
-      <SidebarButton icon="gift" title="Products" />
-      <SidebarButton icon="dollar" title="Sales" />
-      <SidebarButton icon="user-shield" title="Users" />
+      <SidebarButtonsContainer isCollapsed={true} title="global">
+        <SidebarButton icon="home" active={true} title="Dashboard" />
+      </SidebarButtonsContainer>
+
+      <SidebarButtonsContainer title="Other">
+        <SidebarButton icon="users" title="Customers" />
+        <SidebarButton icon="gift" title="Products" />
+        <SidebarButton icon="dollar" title="Sales" />
+        <SidebarButton icon="user-shield" title="Users" />
+      </SidebarButtonsContainer>
+      <SidebarButtonsContainer title="account">
+        <SidebarButton icon="lock" title="Sign in" />
+        <SidebarButton icon="user-plus" title="Sign up" />
+      </SidebarButtonsContainer>
+
     </div>
   )
 }

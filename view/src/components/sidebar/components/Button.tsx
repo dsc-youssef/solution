@@ -14,7 +14,7 @@ const SidebarDropdown: FC<SidebarDropdownProps> = ({ icon, title, active }) => {
 
   return (
     <button type="button" className={`sidebar-button ${active && "active"}`}>
-      <i className={`fad fa-${icon} btn-icon`} />
+      <i className={`fal fa-${icon} btn-icon`} />
       <p className="btn-title">{title}</p>
     </button>
   )
