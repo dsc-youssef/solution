@@ -1,9 +1,33 @@
+/* variables from custom/variables */
 .sidebar {
   @extend .card;
-  width: $sidebar-min-width;
-  min-width: $sidebar-min-width;
+  min-width: $sidebar-min-width !important;
   border-radius: $sidebar-border-radius;
   box-shadow: $sidebar-box-shadow;
   background: $sidebar-background !important;
+
+
+  /* Start Sidebar Header*/
+  .sidebar-header {
+    // Code
+  }
+
+  /* End Sidebar Header*/
+
+
+  /* Start Sidebar Body*/
+  .sidebar-body {
+
+    /* Start Sidebar Button */
+
+    .sidebar-button {
+      // Code
+    }
+
+    /* Start Sidebar Button*/
+
+  }
+
+  /* End Sidebar Body*/
 
 }
