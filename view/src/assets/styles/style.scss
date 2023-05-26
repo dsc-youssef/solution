@@ -1,3 +1,8 @@
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Core */
 @import "./scss/fonts";
 @import "./scss/functions";
