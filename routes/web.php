@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RolesController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +13,7 @@ use App\Http\Controllers\RolesController;
 */
 
 
-Route::get("/", [RolesController::class, "index"]);
+Route::get("/", function(){
+  return "hello";
+});
+

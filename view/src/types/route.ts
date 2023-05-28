@@ -1,14 +1,11 @@
 // Types
-import { ReactNode } from "react";
+import { FC } from "react";
 
 export interface RouteObject {
   path: string,
-  element: ReactNode,
+  element: FC,
+  category?: string,
   key?: string | number,
-  accessRoles?: number[]
-}
-
-export interface RoutesArray {
-  routes: RouteObject[]
+  roles: string[]
 }
 

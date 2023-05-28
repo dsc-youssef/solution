@@ -16,7 +16,6 @@ const Footer = lazy(() => import("@/components/footer"));
 const Navbar = lazy(() => import("@/components/navbar"));
 const Sidebar = lazy(() => import("@/components/sidebar"));
 
-
 const LayoutStructure: FC = () => {
   const { direction, language } = useSelector((state: RootState) => state.settings);
 
