@@ -1,8 +1,10 @@
 // Dependencies
 
 // Hooks
-//import useRoute from "@/hooks/useRoute";
+import useRoute from "@/hooks/useRoute";
 
-//const {createRoutesArray, createRouteObject} = useRoute();
+const { createRoutesArray, createRouteObject } = useRoute();
 
-//export const routes = createRoutesArray([]);
+export const routes = createRoutesArray([
+
+]);
