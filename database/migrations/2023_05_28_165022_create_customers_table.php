@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100)->nullable(false);
+            $table->integer('projects')->nullable(false)->default(0);
+            $table->bigInteger('spent')->nullable(false)->default(0);
+            $table->boolean('veifed')->nullable(false)->default(false);
+            $table->string('image', 255)->nullable(false)->default("");
+            $table->string('phone', 50)->nullable(false);
+            $table->string('email', 100)->nullable(false);
+            $table->string('country', 50)->nullable(false);
             $table->timestamps();
         });
     }

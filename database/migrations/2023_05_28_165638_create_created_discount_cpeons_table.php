@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('created_discount_cpeons', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
+            $table->unsignedBigInteger("cpeon_id");
+            $table->foreign("cpeon_id")->references("id")->on("discount_cpeons")->onDelete('cascade');
             $table->timestamps();
         });
     }

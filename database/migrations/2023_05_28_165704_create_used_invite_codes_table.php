@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('used_invite_codes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
+            $table->unsignedBigInteger("invite_code_id");
+            $table->foreign("invite_code_id")->references("id")->on("invite_codes")->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('invite_codes', function (Blueprint $table) {
             $table->id();
+            $table->boolean('used')->nullable(false)->default(false);
+            $table->string('code', 50)->nullable(false);
             $table->timestamps();
         });
     }

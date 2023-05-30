@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('support_tickets', function (Blueprint $table) {
             $table->id();
+            $table->string("subject", 255)->nullable(false);
+            $table->string("message", 4000)->nullable(false);
+            $table->string("email", 120)->nullable(false);
             $table->timestamps();
         });
     }

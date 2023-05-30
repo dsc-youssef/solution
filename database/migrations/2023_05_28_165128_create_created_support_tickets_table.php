@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('created_support_tickets', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("ticket_id");
+            $table->foreign("ticket_id")->references("id")->on("support_tickets")->onDelete('cascade');
             $table->timestamps();
         });
     }

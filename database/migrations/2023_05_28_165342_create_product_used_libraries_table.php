@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('product_used_libraries', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("product_id");
+            $table->foreign("product_id")->references("id")->on("products")->onDelete('cascade');
+            $table->string('language', 35)->nullable()->default('text');
             $table->timestamps();
         });
     }

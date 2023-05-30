@@ -12,17 +12,17 @@ return new class extends Migration {
   {
     Schema::create('users', function (Blueprint $table) {
       $table->id();
-      $table->string("username", 50);
-      $table->string("first_name", 25);
-      $table->string("last_name", 25);
-      $table->string("password", 255);
-      $table->string("description", 5000);
-      $table->string("phone", 50);
-      $table->string("email", 100);
-      $table->string("country", 50);
-      $table->string("sale_code", 50);
-      $table->string("old_token", 255);
-      $table->string("new_token", 255);
+      $table->string("username", 50)->nullable(false);
+      $table->string("first_name", 25)->nullable(false);
+      $table->string("last_name", 25)->nullable(false);
+      $table->string("password", 255)->nullable(false);
+      $table->string("description", 5000)->nullable()->default("");
+      $table->string("phone", 50)->nullable(false);
+      $table->string("email", 100)->nullable(false);
+      $table->string("country", 50)->nullable(false);
+      $table->string("sale_code", 50)->nullable(false);
+      $table->boolean("status")->default(false);
+      $table->string("ip", 30)->nullable();
       $table->timestamps();
     });
   }

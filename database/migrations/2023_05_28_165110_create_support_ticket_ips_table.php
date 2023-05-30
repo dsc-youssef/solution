@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('support_ticket_ips', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("ticket_id");
+            $table->foreign("ticket_id")->references("id")->on("support_tickets")->onDelete('cascade');
+            $table->string('pc_ip', 50)->nullable(false);
             $table->timestamps();
         });
     }
