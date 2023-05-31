@@ -9,7 +9,7 @@
 
 
   .main-content {
-    @apply w-auto m-0 p-0;
+    @apply w-full m-0 p-0;
 
     >[class*="col-"] {
       @apply p-0 m-0;

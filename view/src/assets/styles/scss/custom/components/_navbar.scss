@@ -1,3 +1,36 @@
 .main-navbar {
-  // Sass Code Here.
+  @apply bg-gray-50 shadow-sm w-full py-4;
+
+  >[class*="container"] {
+    @apply flex justify-between items-center;
+
+    .nav-user-buttons {
+      @apply flex items-center gap-4 select-none;
+
+      >[class*="fa-"] {
+        @apply cursor-pointer;
+      }
+
+      .navbar-user-dropdown {
+
+        .toggle-btn {
+          @apply border-0 p-0 m-0;
+
+          &::after,
+          &::before {
+            content: "";
+            @apply hidden;
+          }
+
+          .avatar {
+            @apply w-[35px];
+          }
+
+        }
+      }
+    }
+
+
+  }
+
 }
