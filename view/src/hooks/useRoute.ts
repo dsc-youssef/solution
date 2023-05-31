@@ -1,6 +1,5 @@
 // Types
 import { RouteObject } from "@/types/route";
-import { User } from "@/types/user";
 
 // Config
 import { CONFIG } from "@/utils/config";
@@ -20,16 +19,6 @@ const useRoute = () => {
   */
   const createRoutesArray = (routes: RouteObject[]): RouteObject[] => routes;
 
-  /** routeValidate
-    * This Function Used To Check If Current User Have Access To This Route.
-    * @param { RouteObject route }
-    * @param { User user }
-    * @return { boolean }
-  */
-  const routeValidate = (route: RouteObject, user: User): boolean => {
-    return user.roles.filter((role:string) => route.roles.includes(role)) ? true : false; 
-  };
-
   /** setTitle
    * This Function Used To Change Page Title.
    * @param { string title }
@@ -42,7 +31,6 @@ const useRoute = () => {
   return {
     createRouteObject,
     createRoutesArray,
-    routeValidate,
     setTitle
   }
 }
