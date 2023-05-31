@@ -11,11 +11,8 @@ const settingsSlice = createSlice({
     setLanguage: (state: SettingsState, action: PayloadAction<string>) => {
       state.language = action.payload;
     },
-    setCurrentTab: (state: SettingsState, action: PayloadAction<string>) => {
-      state.currentTab = action.payload;
-    }
   }
 })
 
-export const { setDirection, setLanguage, setCurrentTab } = settingsSlice.actions;
+export const { setDirection, setLanguage } = settingsSlice.actions;
 export default settingsSlice.reducer;
