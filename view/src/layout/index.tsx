@@ -9,7 +9,6 @@ import { CONFIG } from "@/utils/config";
 
 const LayoutStructure = lazy(() => import("./Layout"));
 const Layout: FC = () => {
-
   return (
     <Routes>
       <Route path={CONFIG.root_path} element={<LayoutStructure />}>

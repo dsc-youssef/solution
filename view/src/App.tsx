@@ -17,19 +17,19 @@ import "~bootstrap/bootstrap.scss";
 import "@/assets/styles/style.scss";
 
 // Layout
-const Layout = lazy(()=> import( "@/layout"));
+const Layout = lazy(() => import("@/layout"));
 
-const App:FC = ()=>{
+const App: FC = () => {
   return (
-    <AuthProvider>
-      <Provider store={store}>
-        <Router>
+    <Router>
+      <AuthProvider>
+        <Provider store={store}>
           <Suspense fallback="loading" >
             <Layout />
           </Suspense>
-        </Router>
-      </Provider>
-    </AuthProvider>
+        </Provider>
+      </AuthProvider>
+    </Router>
   )
 }
 

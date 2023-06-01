@@ -1,16 +1,16 @@
 // Types
 import { StorageType } from "@/types/storage";
 
-const useStorage = ()=> {
-  
-  /** setStorage 
+const useStorage = () => {
+
+  /** setStorage
    * This Function Used To Create or Update a ( Session | Local ) Storage.
    * @param { string name }
    * @param { StorageType storage }
    * @param { data }
    * @return { void }
   */
-  const setStorage = (name:string, storage:StorageType, data:any = {})=> {
+  const setStorage = (name: string, storage: StorageType, data: any = {}) => {
     switch (storage) {
       case "local":
         localStorage.setItem(name, JSON.stringify(data));
@@ -23,17 +23,17 @@ const useStorage = ()=> {
         break;
     }
   }
-  
+
   /** getStorage
    * This Function Used To Get Storage Data.
    * @param { string name }
    * @param { StorageType storage }
    * @return { any }
   */
-  const getStorage = (name:string, storage: StorageType)=> {
+  const getStorage = (name: string, storage: StorageType) => {
     switch (storage) {
       case "local":
-        return  localStorage.getItem(name);
+        return localStorage.getItem(name);
         break;
       case "session":
         return sessionStorage.getItem(name);
@@ -43,17 +43,17 @@ const useStorage = ()=> {
         break;
     }
   }
-  
+
   /** removeStorage
    * This Function Used To Remove a Storage.
    * @param { string name }
    * @param { StorageType storage }
    * @return { any }
   */
-  const removeStorage = (name:string, storage: StorageType)=> {
+  const removeStorage = (name: string, storage: StorageType) => {
     switch (storage) {
       case "local":
-        return  localStorage.remove(name);
+        return localStorage.remove(name);
         break;
       case "session":
         return sessionStorage.remove(name);
@@ -63,7 +63,7 @@ const useStorage = ()=> {
         break;
     }
   }
-  
+
   return {
     setStorage,
     getStorage,

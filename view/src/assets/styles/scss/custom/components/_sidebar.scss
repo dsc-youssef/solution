@@ -1,5 +1,5 @@
 .sidebar {
-  @apply bg-slate-900 overflow-x-hidden overflow-y-auto shadow-none rounded-none min-w-[275px];
+  @apply bg-slate-900 overflow-x-hidden overflow-y-auto shadow-none rounded-none min-w-[275px] min-h-[100vh] z-50 transition-all;
 
   .sidebar-header {
     @apply flex justify-between items-center w-full py-6 px-5;
@@ -54,5 +54,15 @@
 
     }
 
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    @apply absolute left-[-400px];
+
+    &.active {
+      @apply left-0 transition-all;
+    }
   }
 }

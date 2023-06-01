@@ -21,6 +21,9 @@
 @import "./scss/layout";
 @import "./scss/card";
 @import "~bootstrap/card";
+@import "~bootstrap/forms";
+@import "./scss/forms";
+
 
 /*
 @import "~bootstrap/root";
@@ -30,7 +33,6 @@
 @import "~bootstrap/containers";
 @import "~bootstrap/grid";
 @import "~bootstrap/tables";
-@import "~bootstrap/forms";
 @import "~bootstrap/buttons";
 @import "~bootstrap/transitions";
 @import "~bootstrap/dropdown";

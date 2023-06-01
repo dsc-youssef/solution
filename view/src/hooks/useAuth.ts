@@ -13,26 +13,26 @@ import { CONFIG } from "@/utils/config";
 
 const useAuth = () => {
   const { removeStorage, getStorage } = useStorage();
-  
-  /** isAuth 
+
+  /** isAuth
    * This Function Used To Check If User Is Authentication.
    * @return { boolean }
   */
   const isAuth = (): boolean => {
     return getStorage(CONFIG.auth_name, "local") || getStorage(CONFIG.auth_name, "session") ? true : false;
   }
-  
-  /** logout 
+
+  /** logout
    * This Function Used To Make User Logout
    * @param { StorageType storage }
-   * @param { boolean reload }
+   * @param { boolean home }
    * @return { void }
   */
-   const logout = (storage:StorageType, reload:boolean = true):void => {
-     removeStorage(CONFIG.auth_name, storage);
-     reload ? window.location.reload() : null;
-   }
-  
+  const logout = (storage: StorageType, home: boolean = true): void => {
+    removeStorage(CONFIG.auth_name, storage);
+    home ? window.location.replace(location.origin) : null;
+  }
+
   /** validatePage
    * The function used to check if UserPublicData have access to this page
    * @param { RouteObject route }

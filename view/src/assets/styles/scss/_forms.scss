@@ -1,0 +1,7 @@
+.form-control {
+  @apply border rounded text-[1rem] outline-none;
+
+  &:focus {
+    @apply border-danger shadow-none;
+  }
+}

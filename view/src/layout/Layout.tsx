@@ -19,6 +19,7 @@ const Sidebar = lazy(() => import("@/components/sidebar"));
 const LayoutStructure: FC = () => {
   const { direction, language } = useSelector((state: RootState) => state.settings);
 
+
   return (
     <main className={`main-layout direction-${direction} lang-${language}`}>
       <Sidebar />

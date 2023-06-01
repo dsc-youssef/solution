@@ -10,9 +10,6 @@ import user_avatar from "~/images/user_avatar.png"
 const UserButtons: FC = () => {
   return (
     <div className="nav-user-buttons">
-      <i className="fal fa-shop" />
-      <i className="fal fa-comments-question-check" />
-      <i className="fal fa-gear" />
       <Dropdown className="navbar-user-dropdown">
         <Dropdown.Toggle className="toggle-btn" variant="none" >
           <img className="avatar" src={user_avatar} alt="user avatar" />
@@ -21,6 +18,9 @@ const UserButtons: FC = () => {
           <Dropdown.ItemText>Logout</Dropdown.ItemText>
         </Dropdown.Menu>
       </Dropdown>
+      <i className="fal fa-shop" />
+      <i className="fal fa-comments-question-check" />
+      <i className="fal fa-gear" />
     </div>
   )
 }
