@@ -17,9 +17,8 @@ export interface UserPublicData extends UserModalsRoles, UserActionsRoles, UserP
   phone: string,
   email: string,
   country: string,
-  ip: string,
   sale_code:string,
-  status: boolean,
+  token: string
 }
 
 export interface UserPrivateData {

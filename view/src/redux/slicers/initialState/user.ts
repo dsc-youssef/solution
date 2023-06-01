@@ -10,7 +10,6 @@ export const initialState: UserPublicData = {
   actions_roles: [],
   pages_roles: [],
   modals_roles: [],
-  ip: "",
   sale_code: "",
-  status: false,
+  token: ""
 }
