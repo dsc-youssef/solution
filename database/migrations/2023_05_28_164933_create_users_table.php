@@ -21,8 +21,6 @@ return new class extends Migration {
       $table->string("email", 100)->nullable(false);
       $table->string("country", 50)->nullable(false);
       $table->string("sale_code", 50)->nullable(false);
-      $table->boolean("status")->default(false);
-      $table->string("ip", 30)->nullable();
       $table->timestamps();
     });
   }
