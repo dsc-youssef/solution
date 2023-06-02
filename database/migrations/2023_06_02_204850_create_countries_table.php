@@ -10,11 +10,9 @@ return new class extends Migration {
    */
   public function up(): void
   {
-    Schema::create('roles', function (Blueprint $table) {
+    Schema::create('countries', function (Blueprint $table) {
       $table->id();
-      $table->string('role', 65)->nullable(false)->unique();
-      $table->unsignedBigInteger("created_by");
-      $table->foreign("created_by")->references("id")->on("users")->onDelete('cascade');
+      $table->string("country", 50)->nullable(false)->unique();
       $table->timestamps();
     });
   }
@@ -24,6 +22,6 @@ return new class extends Migration {
    */
   public function down(): void
   {
-    Schema::dropIfExists('roles');
+    Schema::dropIfExists('countries');
   }
 };

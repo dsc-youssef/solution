@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('support_ticket_ips', function (Blueprint $table) {
+        Schema::create('page_roles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("ticket_id");
-            $table->foreign("ticket_id")->references("id")->on("support_tickets")->onDelete('cascade');
-            $table->string('pc_ip', 50)->nullable(false);
+           
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('support_ticket_ips');
+        Schema::dropIfExists('page_roles');
     }
 };

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dashboard_modals', function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
-            $table->unsignedBigInteger("role_id");
-            $table->foreign("role_id")->references("id")->on("roles")->onDelete('cascade');
+            $table->unsignedBigInteger("created_by");
+            $table->foreign("created_by")->references("id")->on("users")->onDelete('cascade');
             $table->string('name', 50)->nullable(false);
             $table->timestamps();
         });
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dashboard_modals');
+        Schema::dropIfExists('dashboard_pages');
     }
 };
