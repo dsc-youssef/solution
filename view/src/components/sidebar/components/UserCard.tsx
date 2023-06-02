@@ -10,8 +10,8 @@ const UserCard:FC = ()=> {
       <div className="head">
         <img className="avatar" src={avatarLogo} alt="user avatar" />
         <div className="info">
-          <h3 className="title">Youssef Bibawi</h3>
-          <p className="role">Senior Frontend</p>
+          <h3 className="title">Empty User</h3>
+          <p className="role">Customer</p>
         </div>
       </div>
       <div className="body">

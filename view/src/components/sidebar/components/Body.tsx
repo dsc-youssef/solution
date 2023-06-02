@@ -11,7 +11,7 @@ const Body: FC = () => {
   return (
     <div className="sidebar-body">
       <UserCard />
-      <SidebarButtonsContainer title="Global">
+      <SidebarButtonsContainer title="Global" isCollapsed={true}>
         <SidebarButton title={"Dashboard"} icon="rocket" active={true}></SidebarButton>
         <SidebarButton title={"FAQ"} icon="info-circle"></SidebarButton>
       </SidebarButtonsContainer>
@@ -62,7 +62,7 @@ const Body: FC = () => {
         <SidebarButton title={"Create Modal"} icon="plus"></SidebarButton>
         <SidebarButton title={"Modals"} icon="box"></SidebarButton>
       </SidebarButtonsContainer>
-      
+
     </div>
   )
 }
