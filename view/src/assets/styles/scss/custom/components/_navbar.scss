@@ -14,7 +14,7 @@
       .navbar-user-dropdown {
 
         .toggle-btn {
-          @apply border-0 p-0 m-0;
+          @apply border-0 p-0 m-0 rounded-full;
 
           &::after,
           &::before {

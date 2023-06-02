@@ -13,13 +13,13 @@ const Login = lazy(() => import("./Login"));
 
 // Interface
 export interface AuthProviderProps {
-  children: ReactNode,
+  children: ReactNode
 }
 
 const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   const { isAuth } = useAuth();
 
-  return isAuth() as boolean ? (
+  return isAuth() ? (
     <>
       {children}
     </>

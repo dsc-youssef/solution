@@ -1,14 +1,17 @@
 // Dependencies
-import { FC } from "react";
+import { FC, useState } from "react";
 
 // Bootstrap Components
 import { Container } from "react-bootstrap";
 
 const Login: FC = () => {
-
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const fromData = new FormData();
   const handelFormSubmit = (e: any) => {
     e.preventDefault();
-    const { username, password } = e.target?.elements;
+    formData.append("username", username);
+    formData.append("password", password);
   }
 
 

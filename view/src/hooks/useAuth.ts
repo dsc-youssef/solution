@@ -19,7 +19,8 @@ const useAuth = () => {
    * @return { boolean }
   */
   const isAuth = (): boolean => {
-    return getStorage(CONFIG.auth_name, "local") || getStorage(CONFIG.auth_name, "session") ? true : false;
+    return true;
+    //return getStorage(CONFIG.auth_name, "local") || getStorage(CONFIG.auth_name, "session") ? true : false;
   }
 
   /** logout
