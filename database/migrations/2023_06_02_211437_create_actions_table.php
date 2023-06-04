@@ -14,6 +14,7 @@ return new class extends Migration {
       $table->id();
       $table->string("name", 50)->nullable(false)->unique();
       $table->unsignedBigInteger("created_by");
+      $table->string('category', 50)->nullable(false);
       $table->foreign("created_by")->references("id")->on("users")->cascadeOnDelete();
       $table->timestamps();
     });

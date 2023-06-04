@@ -20,8 +20,12 @@ class DatabaseSeeder extends Seeder
     // ]);
 
     $this->call([
-      AdminSeeder::class,
-      CustomerRoleSeeder::class
+      CreateAdminSeeder::class,
+      DefaultRolesSeeder::class,
+      DashboardPagesSeeder::class,
+      DashboardModalsSeeder::class,
+      AdminRoleSeeder::class,
+      AdminPermissionsSeeder::class
     ]);
   }
 }

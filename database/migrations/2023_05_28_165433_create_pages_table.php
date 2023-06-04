@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("created_by");
-            $table->foreign("created_by")->references("id")->on("users")->onDelete('cascade');
+            $table->foreign("created_by")->references("id")->on("users")->cascadeOnDelete();
             $table->string('name', 50)->nullable(false)->unique();
+            $table->string('category', 50)->nullable(false);
             $table->timestamps();
         });
     }

@@ -10,11 +10,11 @@ return new class extends Migration {
    */
   public function up(): void
   {
-    Schema::create('user_images', function (Blueprint $table) {
+    Schema::create('discount_coupons', function (Blueprint $table) {
       $table->id();
-      $table->unsignedBigInteger("user_id");
-      $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete();
-      $table->string("image", 255)->nullable(true)->default(null);
+      $table->decimal('discount', 13, 2)->nullable(false);
+      $table->boolean('available')->nullable(false)->default(false);
+      $table->bigInteger('used_count')->nullable(false)->default(0);
     });
   }
 
@@ -23,6 +23,6 @@ return new class extends Migration {
    */
   public function down(): void
   {
-    Schema::dropIfExists('user_images');
+    Schema::dropIfExists('discount_coupons');
   }
 };

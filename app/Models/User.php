@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    use HasFactory;
+  use HasFactory;
+  // protected $hidden = ['password', "created_at", "updated_at"];\
+
+
+
+
+
 }

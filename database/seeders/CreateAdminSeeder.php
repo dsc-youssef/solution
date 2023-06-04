@@ -3,10 +3,12 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\UserImage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
-class AdminSeeder extends Seeder
+class CreateAdminSeeder extends Seeder
 {
   /**
    * Run the database seeds.
@@ -19,16 +21,16 @@ class AdminSeeder extends Seeder
       "username" => "solution123",
       "password" => Hash::make("solution123"),
       "description" => "this is a admin",
-      "phone" => "01234567890",
-      "email" => "xcvkp@example.com",
+      "phone" => fake()->phoneNumber(),
+      "email" => fake()->email(),
       "sale_code" => uniqid()
     ]);
-    
+
     UserImage::create([
       "image" => "",
-      "user_id" =>  1
+      "user_id" => 1
     ]);
-    
-    
+
+
   }
 }

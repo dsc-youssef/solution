@@ -10,12 +10,12 @@ return new class extends Migration {
    */
   public function up(): void
   {
-    Schema::create('modals', function (Blueprint $table) {
+    Schema::create('created_discount_coupon', function (Blueprint $table) {
       $table->id();
-      $table->string('name', 50)->nullable(false)->unique();
-      $table->string('category', 50)->nullable(false);
       $table->unsignedBigInteger("created_by");
-      $table->foreign("created_by")->references("id")->on("users")->cascadeOnDelete();
+      $table->foreign("created_by")->references("id")->on("users")->onDelete('cascade');
+      $table->unsignedBigInteger("coupon_id");
+      $table->foreign("coupon_id")->references("id")->on("discount_coupons")->onDelete('cascade');
       $table->timestamps();
     });
   }
@@ -25,6 +25,6 @@ return new class extends Migration {
    */
   public function down(): void
   {
-    Schema::dropIfExists('dashboard_modals');
+    Schema::dropIfExists('created_discount_coupons');
   }
 };
