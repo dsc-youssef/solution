@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('modals', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("created_by");
-            $table->string('name', 50)->nullable(false);
+            $table->string('name', 50)->nullable(false)->unique();
             $table->foreign("created_by")->references("id")->on("users")->onDelete('cascade');
             $table->timestamps();
         });

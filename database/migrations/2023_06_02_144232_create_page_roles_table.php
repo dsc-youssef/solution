@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('page_roles', function (Blueprint $table) {
-            $table->id();
-           
-            $table->timestamps();
+          $table->id();
+          $table->unsignedBigInteger("role_id");
+          $table->foreign("role_id")->references("id")->on("roles")->onDelete('cascade');
+          $table->unsignedBigInteger("page_id");
+          $table->foreign("page_id")->references("id")->on("pages")->onDelete('cascade');
         });
     }
 

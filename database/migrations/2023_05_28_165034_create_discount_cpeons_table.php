@@ -16,7 +16,6 @@ return new class extends Migration
             $table->decimal('discount', 13, 2)->nullable(false);
             $table->boolean('avaliable')->nullable(false)->default(false);
             $table->bigInteger('used_count')->nullable(false)->default(0);
-            $table->timestamps();
         });
     }
 

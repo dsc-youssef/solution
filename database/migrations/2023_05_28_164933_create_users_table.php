@@ -16,11 +16,10 @@ return new class extends Migration {
       $table->string("first_name", 25)->nullable(false);
       $table->string("last_name", 25)->nullable(false);
       $table->string("password", 255)->nullable(false);
-      $table->string("description", 5000)->nullable()->default("");
+      $table->string("description", 5000)->nullable(false)->default("");
       $table->string("phone", 50)->nullable(false)->unique();
       $table->string("email", 100)->nullable(false)->unique();
-      $table->string("country", 50)->nullable(false);
-      $table->string("sale_code", 50)->nullable(false);
+      $table->string("sale_code", 50)->nullable(false)->unique();
       $table->timestamps();
     });
   }

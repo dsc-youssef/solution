@@ -16,7 +16,7 @@ return new class extends Migration {
       $table->foreign("customer_id")->references("id")->on("customers")->onDelete('cascade');
       $table->unsignedBigInteger("product_id");
       $table->foreign("product_id")->references("id")->on("products")->onDelete('cascade');
-      $table->boolean("accepted")->default(false);
+      $table->boolean("accepted")->nullable(false)->default(false);
       $table->decimal('paid', 13, 2)->nullable(false);
       $table->decimal('remaining', 13, 2)->nullable(false);
       $table->timestamps();

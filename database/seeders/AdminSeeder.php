@@ -14,15 +14,21 @@ class AdminSeeder extends Seeder
   public function run(): void
   {
     User::create([
-      "first_name" => "solution",
-      "last_name" => "admin",
+      "first_name" => "Solution",
+      "last_name" => "Moderator",
       "username" => "solution123",
-      "password" => "solution123",
+      "password" => Hash::make("solution123"),
       "description" => "this is a admin",
       "phone" => "01234567890",
       "email" => "xcvkp@example.com",
-      "country" => "anywhere",
       "sale_code" => uniqid()
     ]);
+    
+    UserImage::create([
+      "image" => "",
+      "user_id" =>  1
+    ]);
+    
+    
   }
 }

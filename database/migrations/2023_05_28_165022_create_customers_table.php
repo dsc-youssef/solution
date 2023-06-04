@@ -17,7 +17,6 @@ return new class extends Migration {
       $table->boolean('verified')->nullable(false)->default(false);
       $table->unsignedBigInteger("user_id");
       $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete();
-      $table->timestamps();
     });
   }
 
