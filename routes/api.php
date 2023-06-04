@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\UserAuthentication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserLoginController;
@@ -20,3 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post("/login", UserLoginController::class);
+
+
+Route::middleware([UserAuthentication::class])->group(function () {
+  # Add All Routes Here, For Example ( Edit User, Create Product, ... )
+});
