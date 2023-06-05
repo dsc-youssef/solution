@@ -20,8 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
   return $request->user();
 });
 
-Route::post("/login", UserLoginController::class);
-
+Route::post("auth/login", UserLoginController::class);
 
 Route::middleware([UserAuthentication::class])->group(function () {
   # Add All Routes Here, For Example ( Edit User, Create Product, ... )

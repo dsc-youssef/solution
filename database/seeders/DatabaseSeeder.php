@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
       DefaultRolesSeeder::class,
       DashboardPagesSeeder::class,
       DashboardModalsSeeder::class,
+      DefaultCountriesSeeder::class,
       AdminRoleSeeder::class,
       AdminPermissionsSeeder::class
     ]);

@@ -9,9 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\Token;
 
 class UserAuthentication
 {
+  use Token; 
+  
   /**
    * Handle an incoming request.
    *
@@ -32,15 +35,13 @@ class UserAuthentication
       }
 
       # Declare Main Variables
-      $token = explode("-|-", Crypt::decryptString($request->token));
-      $username = str_ireplace("username=", "", $token[0]);
-      $ip = str_ireplace("ip=", "", $token[1]);
+      $token = $this->decryptUserToken($request->token);
 
       # Get User From database
-      $user = User::all()->where("username", e($username))->first();
+      $user = User::all()->where("username", e($token["username"]))->first();
 
       # Check User Validate
-      if ($ip === $request->getClientIp() && !empty($user)) {
+      if ($token["ip"] === $request->getClientIp() && !empty($user)) {
         return $next($request);
       }
 

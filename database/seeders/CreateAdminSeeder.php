@@ -18,8 +18,8 @@ class CreateAdminSeeder extends Seeder
     User::create([
       "first_name" => "Solution",
       "last_name" => "Moderator",
-      "username" => "solution123",
-      "password" => Hash::make("solution123"),
+      "username" => strtolower("solution123"),
+      "password" => Hash::make("123456"),
       "description" => "this is a admin",
       "phone" => fake()->phoneNumber(),
       "email" => fake()->email(),
@@ -27,7 +27,7 @@ class CreateAdminSeeder extends Seeder
     ]);
 
     UserImage::create([
-      "image" => "",
+      "image" => null,
       "user_id" => 1
     ]);
 
