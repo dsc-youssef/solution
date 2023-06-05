@@ -53,10 +53,10 @@ const useStorage = () => {
   const removeStorage = (name: string, storage: StorageType) => {
     switch (storage) {
       case "local":
-        return localStorage.remove(name);
+        return localStorage.removeItem(name);
         break;
       case "session":
-        return sessionStorage.remove(name);
+        return sessionStorage.removeItem(name);
         break;
       default:
         throw new Error("You Can Use Local And Session Storage Only.");

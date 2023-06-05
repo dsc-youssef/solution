@@ -1,0 +1,19 @@
+.nav-tabs {
+  @apply bg-transparent;
+
+  .nav-item {
+    @apply bg-transparent;
+
+    .nav-link {
+      @apply text-dark;
+
+      &:hover {
+        @apply border-transparent;
+      }
+
+      &.active {
+        @apply bg-transparent border-none text-warning font-medium;
+      }
+    }
+  }
+}

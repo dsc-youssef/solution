@@ -1,30 +1,51 @@
 // Dependencies
 import { FC, useState } from "react";
 
-// Bootstrap Components
-import { Container } from "react-bootstrap";
+// Hooks
+import useAuth from "@/hooks/useAuth";
 
 const Login: FC = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const fromData = new FormData();
-  const handelFormSubmit = (e: any) => {
+  const [stayLogin, setStayLogin] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
+  const { login } = useAuth();
+
+  // Handle Login
+  const handleFormSubmit = async (e: any) => {
     e.preventDefault();
-    formData.append("username", username);
-    formData.append("password", password);
+    try {
+      const response = await login({ username, password, stayLogin });
+      setMessage(response?.data?.message || "");
+      response?.data?.state && location.reload();
+    } catch (e) {
+      console.error(e)
+    }
   }
 
-
   return (
-    <Container>
-      <section className="h-screen flex items-center justify-center ">
-        <form className="flex flex-col gap-2" onSubmit={handelFormSubmit}>
-          <input className="form-control" name="username" type="text" placeholder="username" />
-          <input className="form-control" name="password" type="password" placeholder="password" />
-          <button className="form-control" type="submit">Login</button>
-        </form>
-      </section>
-    </Container>
+    <form className="auth-form" onSubmit={handleFormSubmit}>
+      <h3 className="form-title">Sign in</h3>
+      <h4 className="form-message"><i className="fal fa-message" /> {message === "" ? "Lets Write Your Data :)" : message}</h4>
+      <input
+        className="form-control"
+        type="text"
+        placeholder="Username"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
+      />
+      <input
+        className="form-control"
+        type="password"
+        placeholder="Password"
+        onChange={(e) => setPassword(e.target.value)} value={password}
+      />
+      <div className="form-check">
+        <input type="checkbox" id="keep-login-check" onChange={(e: any) => setStayLogin(e.target.checked as boolean)} />
+        <label htmlFor="keep-login-check">keep me login</label>
+      </div>
+      <button className="btn" type="submit">Login</button>
+    </form>
   )
 }
 

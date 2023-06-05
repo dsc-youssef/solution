@@ -13,7 +13,7 @@ export interface UserModalsRoles {
 export interface UserPublicData extends UserModalsRoles, UserActionsRoles, UserPagesRoles {
   first_name: string,
   last_name: string,
-  image?: string,
+  image: string|null,
   phone: string,
   email: string,
   country: string,
@@ -31,7 +31,7 @@ export interface UserPrivateData {
 export interface UserLoginRequest {
   username: string,
   password: string,
-  stayLogin: boolean
+  stayLogin?: boolean
 }
 
 export interface User extends UserPublicData, UserPrivateData {}

@@ -9,7 +9,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Auth
 import useAuth from "@/hooks/useAuth";
-const Login = lazy(() => import("./Login"));
+const AuthComponent = lazy(() => import("./AuthComponent"));
 
 // Interface
 export interface AuthProviderProps {
@@ -25,7 +25,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
     </>
   ) : (
     <Routes>
-      <Route path="*" element={<Login />} />
+      <Route path="*" element={<AuthComponent />} />
     </Routes>
   )
 

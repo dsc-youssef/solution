@@ -34,7 +34,7 @@
     }
 
     .sidebar-user-card {
-      @apply py-3 px-3 mx-3 mb-4 rounded-xl text-warning border border-info/20 shadow-lg shadow-info/10 transition-all select-none;
+      @apply h-full shadow-xl shadow-primary/10 bg-gradient-to-t from-primary/30 via-dark/20 border-r border-l border-primary/20 py-3 px-3 mx-3 mb-4 rounded-xl text-warning transition-all select-none;
 
       .head {
         @apply flex gap-4 items-center;
@@ -48,31 +48,25 @@
         }
 
         .title {
-          @apply text-[1.1rem];
+          @apply text-[1rem] line-clamp-1;
         }
 
-        .role {
-          @apply text-sm font-semibold text-warning;
+        .country {
+          @apply text-sm font-semibold text-info;
         }
       }
 
       .body {
-        @apply flex items-center gap-2 mt-3;
+        @apply flex items-center gap-2 mt-3 justify-end;
 
         >.btn {
-          @apply bg-secondary;
+          @apply bg-gradient-to-r to-info/50 from-primary/30;
 
           &:hover {
             @apply text-white;
           }
         }
       }
-
-      &:hover {
-        @apply bg-info/10;
-      }
-
-
     }
 
     .sidebar-category {
@@ -88,11 +82,22 @@
     }
 
     .sidebar-button {
-      @apply w-full text-sm flex items-center outline-none border-none rounded overflow-hidden font-medium transition-all relative py-3 px-2 text-white/80 my-[.2rem] select-none;
+      @apply line-clamp-1 w-full text-sm flex items-center outline-none border-none rounded overflow-hidden font-medium transition-all relative py-3 px-2 text-white/80 my-[.2rem] select-none;
 
       &.active {
-        @apply text-info/100 bg-primary/20;
+        @apply text-white/100 bg-info/20;
+
+        &:hover {
+          @apply translate-x-4 text-white;
+        }
+
+        &::after {
+          content: "";
+          @apply w-[8px] h-full bg-primary absolute left-0 top-0;
+        }
       }
+
+
 
       &:hover {
         @apply translate-x-4 text-info;

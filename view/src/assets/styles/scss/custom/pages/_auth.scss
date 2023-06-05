@@ -1,0 +1,45 @@
+body {
+  &:has(.auth) {
+    @apply bg-[url(~/images/auth_background.svg)] bg-cover bg-no-repeat;
+  }
+}
+
+.auth {
+  @apply flex items-center justify-center my-6;
+
+  .auth-card {
+    @apply min-w-max w-[500px] flex flex-col gap-3 bg-gradient-to-tr from-primary/30 to-info/30 backdrop-blur-sm p-4 py-6 rounded-lg;
+
+    .auth-form {
+      @apply flex flex-col gap-3;
+
+      .form-title {
+        @apply text-white font-semibold text-3xl mb-7;
+      }
+
+      .form-label {
+        @apply text-white font-semibold text-sm;
+      }
+
+      .form-message {
+        @apply text-warning font-medium mb-3 flex gap-2 items-center capitalize;
+      }
+
+      .form-check {
+        @apply text-white flex items-center gap-2 capitalize select-none;
+      }
+
+      .form-control {
+        @apply border-white/30 text-white py-2 text-[1rem];
+
+        &:focus {
+          @apply border-white;
+        }
+      }
+    }
+
+
+
+  }
+
+}
