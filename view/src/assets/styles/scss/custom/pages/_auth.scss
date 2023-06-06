@@ -1,14 +1,8 @@
-body {
-  &:has(.auth) {
-    @apply bg-[url(~/images/auth_background.svg)] bg-cover bg-no-repeat;
-  }
-}
-
 .auth {
   @apply flex items-center justify-center my-6;
 
   .auth-card {
-    @apply min-w-max w-[500px] flex flex-col gap-3 bg-gradient-to-tr from-primary/30 to-info/30 backdrop-blur-sm p-4 py-6 rounded-lg;
+    @apply w-full max-w-[500px] flex flex-col gap-3 bg-dark/40 backdrop-blur-sm p-4 py-6 rounded-lg;
 
     .auth-form {
       @apply flex flex-col gap-3;
@@ -18,11 +12,11 @@ body {
       }
 
       .form-label {
-        @apply text-white font-semibold text-sm;
+        @apply text-white/70 mt-2;
       }
 
       .form-message {
-        @apply text-warning font-medium mb-3 flex gap-2 items-center capitalize;
+        @apply text-info font-medium mb-3 flex gap-2 items-center capitalize text-[1rem];
       }
 
       .form-check {
@@ -35,6 +29,10 @@ body {
         &:focus {
           @apply border-white;
         }
+      }
+
+      .btn {
+        @apply bg-gradient-to-tr from-primary/50 to-danger mt-3;
       }
     }
 

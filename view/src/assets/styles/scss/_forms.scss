@@ -1,9 +1,11 @@
 .form-control {
   @apply border rounded text-sm outline-none py-1.5 px-3 transition-all bg-transparent;
 
-  // when focus make the border is visible
   &:focus {
     @apply border-primary;
   }
 
+}
+.form-label {
+  @apply text-dark/70 flex items-center gap-2 font-semibold text-sm;
 }

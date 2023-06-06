@@ -1,5 +1,8 @@
+body {
+  @apply bg-[url(~/images/auth_background.svg)] bg-cover bg-no-repeat min-h-screen ;
+}
 .main-layout {
-  @apply bg-white min-h-[100vh] w-full flex;
+  @apply min-h-[100vh] w-full flex;
 
 
   &.direction-ltr {

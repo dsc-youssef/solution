@@ -3,5 +3,6 @@ export interface ResponseData <D> {
     message: string,
     state: boolean,
     data: D
-  }
+  },
+  status: number
 }

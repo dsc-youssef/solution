@@ -26,18 +26,22 @@ const Login: FC = () => {
   return (
     <form className="auth-form" onSubmit={handleFormSubmit}>
       <h3 className="form-title">Sign in</h3>
-      <h4 className="form-message"><i className="fal fa-message" /> {message === "" ? "Lets Write Your Data :)" : message}</h4>
+      <h4 className="form-message"><i className="fal fa-messages" /> {message === "" ? "Welcome to solution <3" : message}</h4>
+      <label htmlFor="username" className="form-label"><i className="fal fa-user" /> Last Name</label>
       <input
         className="form-control"
         type="text"
         placeholder="Username"
+        id="username"
         onChange={(e) => setUsername(e.target.value)}
         value={username}
       />
+      <label htmlFor="password" className="form-label"><i className="fal fa-lock" /> Password</label>
       <input
         className="form-control"
         type="password"
         placeholder="Password"
+        id="password"
         onChange={(e) => setPassword(e.target.value)} value={password}
       />
       <div className="form-check">

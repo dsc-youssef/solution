@@ -27,7 +27,7 @@ const useAuth = () => {
       const response:ResponseData<UserPublicData> = await loginApi({username, password});
       
       // If use is valid clear storage
-      if(response.data.state){
+      if(response.status === 200 && response.data.state){
         removeStorage(CONFIG.auth_name, "local");
         removeStorage(CONFIG.auth_name, "session");
       } 
