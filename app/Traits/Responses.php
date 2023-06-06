@@ -18,6 +18,6 @@ trait Responses {
       "data" => $data
     ], $status);
   }
-  // Symfony\Component\ErrorHandler\Error\FatalError: Constant expression contains invalid operations in file /data/data/com.termux/files/home/htdocs/Projects/in_complate/solution/app/Traits/Responses.php on line 4
+ // ParseError: syntax error, unexpected token &quot;=&quot;, expecting &quot;)&quot; in file /data/data/com.termux/files/home/htdocs/Projects/in_complate/solution/app/Http/Controllers/CountriesController.php on line 12
 
 }

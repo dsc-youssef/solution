@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\Responses;
 use App\Traits\Token;
@@ -17,9 +18,10 @@ class UserLoginController extends Controller
   use Token;
 
   /**
-  * Handle the incoming request.
-  */
-  public function __invoke(Request $request) {
+   * Handle the incoming request.
+   */
+  public function __invoke(Request $request)
+  {
 
     # First Check Validation
     $validation = Validator($request->all(), [
@@ -36,9 +38,9 @@ class UserLoginController extends Controller
       }
     }
 
-    # Get User From Database
-    $user = User::all()->where("username", strtolower($request->username))->first();
 
+    # Get User From Database
+    $user = User::all()->where("username", strtolower(e($request->username)))->first();
     # Check if User is Found and Password is valid
     if (!empty($user) && Hash::check($request->password, $user->password)) {
 
@@ -46,20 +48,20 @@ class UserLoginController extends Controller
       $user_ip = $request->getClientIp();
 
       # Send Response If everything is good
-      return $this->createResponse($this->goodResponse, true, "logged success",  [
-          "username" => $user->username,
-          "first_name" => $user->first_name,
-          "last_name" => $user->last_name,
-          "description" => $user->description,
-          "phone" => $user->phone,
-          "email" => $user->email,
-          "image" => null,
-          "country" => "Palestine",
-          "sale_code" => $user->sale_code,
-          "access_pages" => Role::find($user->id)->getPages,
-          "access_modals" => Role::find($user->id)->getModals,
-          "token" => $this->generateUserToken($user->username, $user_ip)
-        ]);
+      return $this->createResponse($this->goodResponse, true, "logged success", [
+        "username" => $user->username,
+        "first_name" => $user->first_name,
+        "last_name" => $user->last_name,
+        "description" => $user->description,
+        "phone" => $user->phone,
+        "email" => $user->email,
+        "image" => User::find($user->id)->image->image,
+        "country" => User::find($user->id)->country->first()->country,
+        "sale_code" => $user->sale_code,
+        "access_pages" => Role::find($user->id)->getPages,
+        "access_modals" => Role::find($user->id)->getModals,
+        "token" => $this->generateUserToken($user->username, $user_ip)
+      ]);
     }
 
     # If Username or password not valid return bad response
@@ -68,4 +70,3 @@ class UserLoginController extends Controller
 
   }
 }
-

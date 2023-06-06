@@ -25,12 +25,5 @@ class CreateAdminSeeder extends Seeder
       "email" => fake()->email(),
       "sale_code" => uniqid()
     ]);
-
-    UserImage::create([
-      "image" => null,
-      "user_id" => 1
-    ]);
-
-
   }
 }
