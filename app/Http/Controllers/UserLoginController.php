@@ -41,6 +41,7 @@ class UserLoginController extends Controller
 
     # Get User From Database
     $user = User::all()->where("username", strtolower(e($request->username)))->first();
+
     # Check if User is Found and Password is valid
     if (!empty($user) && Hash::check($request->password, $user->password)) {
 
@@ -55,11 +56,11 @@ class UserLoginController extends Controller
         "description" => $user->description,
         "phone" => $user->phone,
         "email" => $user->email,
-        "image" => User::find($user->id)->image->image,
-        "country" => User::find($user->id)->country->first()->country,
+        "image" => $user->image->image,
+        "country" => $user->country->first()->country,
         "sale_code" => $user->sale_code,
-        "access_pages" => Role::find($user->id)->getPages,
-        "access_modals" => Role::find($user->id)->getModals,
+        "access_pages" => Role::find($user->roles->first()->id)->getPages,
+        "access_modals" => Role::find($user->roles->first()->id)->getModals,
         "token" => $this->generateUserToken($user->username, $user_ip)
       ]);
     }

@@ -9,4 +9,5 @@ class CountryUser extends Model
 {
   use HasFactory;
   public $timestamps = false;
+  protected $fillable = ["user_id", "country_id"];
 }

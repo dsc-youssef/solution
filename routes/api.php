@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\CountriesController;
+use App\Http\Controllers\UserRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post("auth/login", UserLoginController::class);
+Route::middleware([UserRegister::class])->post("auth/register", UserRegisterController::class);
 
 Route::get("country/show", [CountriesController::class, "show"]);
 
@@ -30,6 +32,3 @@ Route::middleware([UserAuthentication::class])->group(function () {
   # Add All Routes Here, For Example ( Edit User, Create Product, ... )
 });
 
-Route::middleware([UserRegister::class])->post("testing", function () {
-  return "hello";
-});

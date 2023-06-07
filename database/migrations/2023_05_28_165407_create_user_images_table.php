@@ -16,8 +16,8 @@ return new class extends Migration {
       $table->foreign("user_id")->references("id")->on("users")->cascadeOnDelete();
       $table->string("image", 255)->nullable(true)->default(null);
     });
-  }
-
+	
+}			
   /**
    * Reverse the migrations.
    */
