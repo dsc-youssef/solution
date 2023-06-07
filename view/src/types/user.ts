@@ -33,6 +33,16 @@ export interface UserLoginRequest {
   password: string,
   stayLogin?: boolean
 }
+export interface UserRegisterRequest  {
+  first_name: string,
+  last_name: string,
+  username: string,
+  password: string,
+  phone: string,
+  email: string,
+  image: null | File,
+  country: string
+}
 
 export interface User extends UserPublicData, UserPrivateData {}
 

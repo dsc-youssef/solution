@@ -1,5 +1,5 @@
 // Dependencies
-import { ChangeEvent, FC, useState, useEffect } from "react";
+import { ChangeEvent, FormEvent, FC, useState, useEffect } from "react";
 
 // Types
 import { CountryData } from "@/types/country";
@@ -7,7 +7,7 @@ import { ResponseData } from "@/types/response";
 
 // Apis
 import getCountriesApi from "@/apis/country/get_countries";
-
+import registerApi from "@/apis/user/register";
 
 const Register: FC = () => {
 
@@ -19,8 +19,9 @@ const Register: FC = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [country, setCountry] = useState<string | null>(null);
+  const [country, setCountry] = useState<string>("");
   const [image, setImage] = useState<null | File>(null);
+  const [message, setMessage] = useState<string>("");
 
   // Handle Upload Image
   const handleImage = (e: ChangeEvent<HTMLInputElement | null>) => {
@@ -33,14 +34,51 @@ const Register: FC = () => {
     const response: ResponseData<CountryData[]> = await getCountriesApi();
     response.status === 200 && response.data.state && setCountries(response.data.data);
   }
+
+  // Handle Form Submit
+  const handleRegisterForm = async (e: FormEvent): Promise<void> => {
+    e.preventDefault();
+    if (password === confirmPassword) {
+
+      try {
+        const form = new FormData();
+        form.append("first_name", firstName);
+        form.append("last_name", lastName);
+        form.append("username", username);
+        form.append("password", password);
+        form.append("email", email);
+        form.append("phone", phoneNumber);
+        form.append("country", country);
+        form.append("image", image as any);
+
+        const response: ResponseData<[]> = await registerApi(form);
+
+
+        if (response.status === 200 && response.data.state) {
+          setMessage(response.data.message);
+          setTimeout(() => {
+            location.reload();
+          }, 1000)
+        } else {
+          setMessage(response.data.message);
+        }
+
+      } catch (e) {
+        console.error(e);
+      }
+    } else {
+      setMessage("Confirm Password Not Matched.");
+    }
+  };
+
   useEffect(() => {
     handleGetCountries();
   }, []);
 
   return (
-    <form className="auth-form">
+    <form className="auth-form" onSubmit={handleRegisterForm}>
       <h3 className="form-title">Sign up</h3>
-      <h4 className="form-message"><i className="fal fa-message" /> Lets Create a New Account !</h4>
+      <h4 className="form-message"><i className="fal fa-message" /> {message !== "" ? message : "Lets Create a New Account !"}</h4>
       <label htmlFor="firstName" className="form-label"><i className="fal fa-address-card" /> First Name</label>
       <input
         className="form-control"
@@ -71,7 +109,7 @@ const Register: FC = () => {
       <label htmlFor="password" className="form-label"><i className="fal fa-lock" /> Password</label>
       <input
         className="form-control"
-        type="text"
+        type="password"
         placeholder="Password"
         id="password"
         value={password}
@@ -113,7 +151,7 @@ const Register: FC = () => {
       />
       <label htmlFor="country" className="form-label"><i className="fal fa-map" /> Country</label>
       <select
-        className="form-control"
+        className="form-select"
         id="country"
         onChange={(e) => setCountry(e.target.value)}
       >

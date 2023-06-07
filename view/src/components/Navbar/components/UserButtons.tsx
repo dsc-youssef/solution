@@ -12,7 +12,7 @@ const UserButtons: FC = () => {
     <div className="nav-user-buttons">
       <Dropdown className="navbar-user-dropdown">
         <Dropdown.Toggle className="toggle-btn" variant="none" >
-          <img className="avatar" src={user_avatar} alt="user avatar" />
+          <img className="avatar " src={user_avatar} alt="user avatar" />
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Dropdown.ItemText>Logout</Dropdown.ItemText>
@@ -20,7 +20,7 @@ const UserButtons: FC = () => {
       </Dropdown>
       <i className="fal fa-shop" />
       <i className="fal fa-comments-question-check" />
-      <i className="fal fa-gear" />
+      <i className="fal fa-gear animate-spin" />
     </div>
   )
 }

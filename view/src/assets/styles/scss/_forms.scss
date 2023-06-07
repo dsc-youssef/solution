@@ -6,6 +6,15 @@
   }
 
 }
+
 .form-label {
-  @apply text-dark/70 flex items-center gap-2 font-semibold text-sm;
+  @apply text-white/70 flex items-center gap-2 font-semibold text-sm;
+}
+
+.form-select {
+  @extend .form-control;
+
+  >option {
+    @apply text-dark;
+  }
 }

@@ -5,7 +5,7 @@
     @apply flex items-center w-full h-[85px] pt-4 px-5;
 
     .sidebar-brand {
-      @apply flex w-full border-b border-white/30 pb-4 justify-center items-center w-full gap-3;
+      @apply flex border-b border-white/30 pb-4 justify-center items-center w-full gap-3;
 
       .brand-icon {
         @apply text-xl text-white;
@@ -22,7 +22,7 @@
     height: calc(100vh - 85px);
 
     &::-webkit-scrollbar {
-      width: 7px;
+      width: 6px;
     }
 
     &::-webkit-scrollbar-track {
@@ -30,7 +30,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      @apply bg-gray-500 rounded-lg;
+      @apply bg-secondary/20 rounded-lg;
     }
 
     .sidebar-user-card {
@@ -40,7 +40,7 @@
         @apply flex gap-4 items-center;
 
         .avatar {
-          @apply w-[45px] rounded-full;
+          @apply w-[45px] h-[45px] rounded-full object-scale-down;
         }
 
         .info {
@@ -48,11 +48,11 @@
         }
 
         .title {
-          @apply text-[1rem] line-clamp-1;
+          @apply text-[1rem] line-clamp-1 capitalize;
         }
 
         .country {
-          @apply text-sm font-semibold text-info;
+          @apply text-sm uppercase font-semibold text-warning;
         }
       }
 

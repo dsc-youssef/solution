@@ -1,5 +1,6 @@
 .main-navbar {
-  @apply bg-gray-50 shadow-sm w-full py-4;
+
+  @apply bg-gradient-to-t from-violet-950/60 via-violet-950/30 to-primary/20 w-[93%] mx-auto mt-4 py-4 px-8 text-white backdrop-blur-sm rounded-ee-[70px] rounded-tl-[70px] border-b border-primary/20 shadow-xl shadow-primary/10;
 
   >[class*="container"] {
     @apply flex justify-between items-center;

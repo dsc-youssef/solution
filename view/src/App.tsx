@@ -3,10 +3,13 @@ import { FC, lazy, Suspense } from "react";
 
 // Redux
 import { store } from "@/redux/store";
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 
 // Auth
 import AuthProvider from "@/auth/AuthProvider";
+
+// Theme
+import ThemeProvider from "@/components/ThemeProvider";
 
 // Router
 import { BrowserRouter as Router } from "react-router-dom";
@@ -22,13 +25,15 @@ const Layout = lazy(() => import("@/layout"));
 const App: FC = () => {
   return (
     <Router>
-      <AuthProvider>
-        <Provider store={store}>
-          <Suspense fallback="loading" >
-            <Layout />
-          </Suspense>
-        </Provider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <ReduxProvider store={store}>
+            <Suspense fallback="loading" >
+              <Layout />
+            </Suspense>
+          </ReduxProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </Router>
   )
 }
